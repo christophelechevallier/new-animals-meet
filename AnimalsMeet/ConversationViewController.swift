@@ -182,7 +182,7 @@ class ConversationViewController: NMessengerViewController {
       (self.inputBarView as! NMessengerBarView).inputTextViewPlaceholder = "Message..."
       
       uglyConversationReloadingTimer = Timer.scheduledTimer(timeInterval: 2.0, target: self, selector: #selector(self.refreshConv), userInfo: nil, repeats: true);
-      self.navigationItem.title = conversation.recipient.name
+      //self.navigationItem.title = conversation.recipient.name
       self.automaticallyAdjustsScrollViewInsets = false
       
       guard let recipient = self.conversation.recipient else { return }

@@ -1,5 +1,5 @@
 PODS:
-  - AFDateHelper (4.1.2)
+  - AFDateHelper (4.2.6)
   - Alamofire (4.4.0)
   - ARSLineProgress (2.1.1)
   - AsyncDisplayKit (1.9.92):
@@ -18,9 +18,9 @@ PODS:
     - Bolts/Tasks
   - Bolts/Tasks (1.8.4)
   - Cereal (3.0.1)
-  - Crashlytics (3.8.4):
-    - Fabric (~> 1.6.3)
-  - Fabric (1.6.11)
+  - Crashlytics (3.9.3):
+    - Fabric (~> 1.7.2)
+  - Fabric (1.7.2)
   - FBSDKCoreKit (4.22.1):
     - Bolts (~> 1.7)
   - FBSDKLoginKit (4.22.1):
@@ -80,7 +80,7 @@ PODS:
   - PromiseKit/UIKit (4.2.0):
     - PromiseKit/CorePromise
   - PullToRefreshSwift (3.0.3)
-  - PusherSwift (4.1.0)
+  - PusherSwift (5.0.1)
   - SCLAlertView (0.7.0)
   - SearchTextField (1.1.8)
   - Sensitive (5.2)
@@ -166,14 +166,14 @@ CHECKOUT OPTIONS:
     :git: https://github.com/vikmeup/SCLAlertView-Swift
 
 SPEC CHECKSUMS:
-  AFDateHelper: b19c83daa132e398b34fbea085a1554ce07adfe9
+  AFDateHelper: f59ed3b9734c1f77873d9df39e71ac7232e302d2
   Alamofire: dc44b1600b800eb63da6a19039a0083d62a6a62d
   ARSLineProgress: 688f3fe810515200186cebee349e06f822575fe6
   AsyncDisplayKit: 49d94f5739669d666ff7cdc3430f43f0b2cfbeaf
   Bolts: 8a7995239dbe724f9cba2248b766d48b7ebdd322
   Cereal: e37032cb23f5b62670044bf0e5d393541c1b7aa9
-  Crashlytics: 79e236942ca1e7fc641df1feb9a275360a78ab6a
-  Fabric: 5911403591946b8228ab1c51d98f1d7137e863c6
+  Crashlytics: dbb07d01876c171c5ccbdf7826410380189e452c
+  Fabric: 9cd6a848efcf1b8b07497e0b6a2e7d336353ba15
   FBSDKCoreKit: 9c2daf0162214d6d2e21cf8208a9c6c2a2e42b9c
   FBSDKLoginKit: 00cf28916b9f0169763a3d61985d745b579fe304
   FBSDKShareKit: 1cbd0fdc2bb3277dd3522512855dcf1f4088f734
@@ -193,7 +193,7 @@ SPEC CHECKSUMS:
   PINRemoteImage: 308731aa6534500e58fc211b9cc2bb7252df25ba
   PromiseKit: 08dfb783c161ddcd95b7912421f14c5113fd8318
   PullToRefreshSwift: 0743b818072bfd7c9464addc2d1b987b131057ca
-  PusherSwift: 13257260d77445f44ee26d7843e9311186b26e79
+  PusherSwift: f2e209d3c88ab95153bdc1cdda7a3e5c892127f2
   SCLAlertView: 8a14ffc40590c619e183eed2298b854385f30be1
   SearchTextField: 1d43b423c2acd3a9e2b37a74180e0cb137fcf1e7
   Sensitive: 010a176b4ebf6f0bf8beadc397d27e8405bf5bdf

@@ -459,6 +459,7 @@
 				A0D054A11DA276E7007B3944 /* Products */,
 				2476698192DE7DA225F5D00A /* Frameworks */,
 				89E80DBC0B3E35270993C2E9 /* Pods */,
+				EDB508301FC1DF2B0041A37B /* Recovered References */,
 			);
 			sourceTree = "<group>";
 		};
@@ -565,6 +566,14 @@
 			path = Useful;
 			sourceTree = "<group>";
 		};
+		EDB508301FC1DF2B0041A37B /* Recovered References */ = {
+			isa = PBXGroup;
+			children = (
+				93370C581E11B62700A75BE7 /* NMessenger.framework */,
+			);
+			name = "Recovered References";
+			sourceTree = "<group>";
+		};
 		F14A3B951F5287B400B31627 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
@@ -620,7 +629,6 @@
 				TargetAttributes = {
 					A0D0549F1DA276E7007B3944 = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = 5DA656H26H;
 						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
@@ -1042,7 +1050,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = 5DA656H26H;
+				DEVELOPMENT_TEAM = "";
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = AnimalsMeet/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
@@ -1067,7 +1075,7 @@
 				CODE_SIGN_ENTITLEMENTS = AnimalsMeet/AnimalsMeet.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = 5DA656H26H;
+				DEVELOPMENT_TEAM = "";
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = AnimalsMeet/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
@@ -1144,7 +1152,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = 5DA656H26H;
+				DEVELOPMENT_TEAM = "";
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = AnimalsMeet/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
