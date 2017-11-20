@@ -37,7 +37,7 @@ target 'AnimalsMeet' do
     pod 'PusherSwift', :inhibit_warnings => true
     pod 'NMessenger', :git => 'https://github.com/Sevauk/NMessenger.git', :inhibit_warnings => true
     pod 'PromiseKit'
-    pod 'AFDateHelper'
+    #pod 'AFDateHelper'
     pod 'PullToRefreshSwift'
     pod 'IQKeyboardManagerSwift'
     pod 'Material'

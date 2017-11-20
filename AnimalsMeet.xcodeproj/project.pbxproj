@@ -109,6 +109,7 @@
 		B4D7FFC21EE8591200FB9A30 /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4D7FFC11EE8591200FB9A30 /* NewsViewController.swift */; };
 		B4D7FFC41EE859A000FB9A30 /* NewsBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4D7FFC31EE859A000FB9A30 /* NewsBaseViewController.swift */; };
 		B4E127861EE728ED00E0AC95 /* NewPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E127851EE728ED00E0AC95 /* NewPostViewController.swift */; };
+		EDC854421FC37F0A00938403 /* DateHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC854411FC37F0900938403 /* DateHelper.swift */; };
 		F14A3B981F5287FA00B31627 /* UserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F14A3B961F5287FA00B31627 /* UserTableViewCell.swift */; };
 		F14A3B991F5287FA00B31627 /* UserTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F14A3B971F5287FA00B31627 /* UserTableViewCell.xib */; };
 		F14A3B9B1F528B0D00B31627 /* UserListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F14A3B9A1F528B0D00B31627 /* UserListViewController.swift */; };
@@ -253,6 +254,7 @@
 		B4D7FFC11EE8591200FB9A30 /* NewsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsViewController.swift; sourceTree = "<group>"; };
 		B4D7FFC31EE859A000FB9A30 /* NewsBaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsBaseViewController.swift; sourceTree = "<group>"; };
 		B4E127851EE728ED00E0AC95 /* NewPostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewPostViewController.swift; sourceTree = "<group>"; };
+		EDC854411FC37F0900938403 /* DateHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DateHelper.swift; path = "/Users/lorenzo/Desktop/new-animals-meet/AnimalsMeet/DateHelper.swift"; sourceTree = "<absolute>"; };
 		F14A3B961F5287FA00B31627 /* UserTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserTableViewCell.swift; sourceTree = "<group>"; };
 		F14A3B971F5287FA00B31627 /* UserTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserTableViewCell.xib; sourceTree = "<group>"; };
 		F14A3B9A1F528B0D00B31627 /* UserListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserListViewController.swift; sourceTree = "<group>"; };
@@ -492,6 +494,7 @@
 				A0D054AF1DA276E7007B3944 /* LaunchScreen.storyboard */,
 				A0D054B21DA276E8007B3944 /* Info.plist */,
 				A0D054AA1DA276E7007B3944 /* AnimalsMeet.xcdatamodeld */,
+				EDC854411FC37F0900938403 /* DateHelper.swift */,
 			);
 			path = AnimalsMeet;
 			sourceTree = "<group>";
@@ -730,7 +733,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		FAF2E1AFAF7B7C74721B82F9 /* [CP] Embed Pods Frameworks */ = {
@@ -861,6 +864,7 @@
 				A098D98C1DD205270014270D /* AnimalListTableViewController.swift in Sources */,
 				A04031DC1DA3A7B300D83E92 /* UserModel.swift in Sources */,
 				8F8FDCA01F99A4B2002E5112 /* TestViewController.swift in Sources */,
+				EDC854421FC37F0A00938403 /* DateHelper.swift in Sources */,
 				A088E38F1DBE1AA800B372F5 /* AnimalModel.swift in Sources */,
 				A06CD7A11E1DB92200402965 /* ListMyAnimals.swift in Sources */,
 				9383B86B1DF8706E0048C071 /* ConversationViewController.swift in Sources */,
