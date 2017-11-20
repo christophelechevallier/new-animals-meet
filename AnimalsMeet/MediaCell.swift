@@ -11,7 +11,7 @@ import PromiseKit
 import UIKit
 import SwiftyJSON
 import FBSDKShareKit
-import AFDateHelper
+//import AFDateHelper
 import SwiftDate
 
 class MediaCell: UITableViewCell {

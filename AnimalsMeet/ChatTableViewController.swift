@@ -10,7 +10,7 @@ import UIKit
 import NMessenger
 import SwiftyJSON
 import PromiseKit
-import AFDateHelper
+//import AFDateHelper
 import SwiftDate
 
 class ChatTableViewController: EasyTableViewController<ConversationModel, ConversationCell> {

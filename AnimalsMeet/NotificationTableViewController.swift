@@ -8,7 +8,7 @@
 
 import UIKit
 import SwiftyJSON
-import AFDateHelper
+//import AFDateHelper
 import PromiseKit
 import PullToRefreshSwift
 import SwiftDate
