@@ -44,6 +44,7 @@ class MediaModel {
    var description: String?
    var isText: Bool!
    var contentText: String!
+    //var taggedUser: [String]!
    
    init() {
    }
@@ -70,6 +71,7 @@ class MediaModel {
       
       likeCount = json["like"].count
       animal = AnimalModel(fromJSON: json["animal"])
+      //taggedUser = [String]()
    }
    
    func getRaw(id: String) -> Promise<JSON> {
@@ -80,18 +82,18 @@ class MediaModel {
       return Api.instance.get("/delete_my_media/\(id!)")
    }
    
-   func callForCreate() -> Promise<JSON> {
+    func callForCreate(taggedUser:[String]!) -> Promise<JSON> {
       
       var id = -1
       if animal != nil {
          id = animal.id
       }
-      var mediaObj: Parameters = ["file64": rawData, "idAnimal": "\(id)"]
+        var mediaObj: Parameters = ["file64": rawData, "idAnimal": "\(id)"]
       if let legend = self.description {
          mediaObj["legend"] = legend
       }
       
-      let parameters: Parameters = ["media" : mediaObj]
+      let parameters: Parameters = ["media" : mediaObj,"users": taggedUser ?? ""]
       return Api.instance.post("/media", withParams: parameters)
    }
    

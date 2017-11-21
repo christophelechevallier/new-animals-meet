@@ -23,17 +23,22 @@ class FeedViewController : EasyTableViewController<MediaModel, MediaCell> {
         loadingEnabled = true
         paginated = false
         title = "Actualités"
+        
     }
     
     override func fetchItems(from: Int, count: Int) -> Promise<[MediaModel]> {
-        
-        return Api.instance.get(endpoint).then { JSON -> [MediaModel] in
+        print("entrando a fetch items")
+        let c = Api.instance.get(endpoint).then { JSON -> [MediaModel] in
             JSON["json"].arrayValue.map {
                 MediaModel(fromJSON: $0)
             }
             .filter { m -> Bool in
-                return self.searchTerm != nil ? (m.author.name?.lowercased().contains(self.searchTerm.lowercased()) ?? true) : true }
+                debugPrint(m)
+                return self.searchTerm != nil ? (m.author.nickname?.lowercased().contains(self.searchTerm.lowercased()) ?? false) : true
+            } //true
         }
+        print("el resultado de la busqueda \(c)")
+        return c
     }
     
     override func onPopulateCell(item: MediaModel, cell: MediaCell) {
