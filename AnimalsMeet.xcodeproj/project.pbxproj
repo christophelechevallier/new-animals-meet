@@ -109,7 +109,7 @@
 		B4D7FFC21EE8591200FB9A30 /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4D7FFC11EE8591200FB9A30 /* NewsViewController.swift */; };
 		B4D7FFC41EE859A000FB9A30 /* NewsBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4D7FFC31EE859A000FB9A30 /* NewsBaseViewController.swift */; };
 		B4E127861EE728ED00E0AC95 /* NewPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E127851EE728ED00E0AC95 /* NewPostViewController.swift */; };
-		EDC854421FC37F0A00938403 /* DateHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC854411FC37F0900938403 /* DateHelper.swift */; };
+		ED9390D01FCC69950004E271 /* DateHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9390CF1FCC69950004E271 /* DateHelper.swift */; };
 		F14A3B981F5287FA00B31627 /* UserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F14A3B961F5287FA00B31627 /* UserTableViewCell.swift */; };
 		F14A3B991F5287FA00B31627 /* UserTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F14A3B971F5287FA00B31627 /* UserTableViewCell.xib */; };
 		F14A3B9B1F528B0D00B31627 /* UserListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F14A3B9A1F528B0D00B31627 /* UserListViewController.swift */; };
@@ -254,7 +254,7 @@
 		B4D7FFC11EE8591200FB9A30 /* NewsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsViewController.swift; sourceTree = "<group>"; };
 		B4D7FFC31EE859A000FB9A30 /* NewsBaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsBaseViewController.swift; sourceTree = "<group>"; };
 		B4E127851EE728ED00E0AC95 /* NewPostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewPostViewController.swift; sourceTree = "<group>"; };
-		EDC854411FC37F0900938403 /* DateHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DateHelper.swift; path = "/Users/lorenzo/Desktop/new-animals-meet/AnimalsMeet/DateHelper.swift"; sourceTree = "<absolute>"; };
+		ED9390CF1FCC69950004E271 /* DateHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateHelper.swift; sourceTree = "<group>"; };
 		F14A3B961F5287FA00B31627 /* UserTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserTableViewCell.swift; sourceTree = "<group>"; };
 		F14A3B971F5287FA00B31627 /* UserTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserTableViewCell.xib; sourceTree = "<group>"; };
 		F14A3B9A1F528B0D00B31627 /* UserListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserListViewController.swift; sourceTree = "<group>"; };
@@ -457,6 +457,7 @@
 		A0D054971DA276E7007B3944 = {
 			isa = PBXGroup;
 			children = (
+				ED9390CF1FCC69950004E271 /* DateHelper.swift */,
 				A0D054A21DA276E7007B3944 /* AnimalsMeet */,
 				A0D054A11DA276E7007B3944 /* Products */,
 				2476698192DE7DA225F5D00A /* Frameworks */,
@@ -494,7 +495,6 @@
 				A0D054AF1DA276E7007B3944 /* LaunchScreen.storyboard */,
 				A0D054B21DA276E8007B3944 /* Info.plist */,
 				A0D054AA1DA276E7007B3944 /* AnimalsMeet.xcdatamodeld */,
-				EDC854411FC37F0900938403 /* DateHelper.swift */,
 			);
 			path = AnimalsMeet;
 			sourceTree = "<group>";
@@ -864,7 +864,7 @@
 				A098D98C1DD205270014270D /* AnimalListTableViewController.swift in Sources */,
 				A04031DC1DA3A7B300D83E92 /* UserModel.swift in Sources */,
 				8F8FDCA01F99A4B2002E5112 /* TestViewController.swift in Sources */,
-				EDC854421FC37F0A00938403 /* DateHelper.swift in Sources */,
+				ED9390D01FCC69950004E271 /* DateHelper.swift in Sources */,
 				A088E38F1DBE1AA800B372F5 /* AnimalModel.swift in Sources */,
 				A06CD7A11E1DB92200402965 /* ListMyAnimals.swift in Sources */,
 				9383B86B1DF8706E0048C071 /* ConversationViewController.swift in Sources */,
@@ -969,8 +969,8 @@
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				CODE_SIGN_IDENTITY = "iPhone Developer: lregaladohdez@gmail.com (MYC4H78TQ4)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -1021,8 +1021,8 @@
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				CODE_SIGN_IDENTITY = "iPhone Developer: lregaladohdez@gmail.com (MYC4H78TQ4)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
@@ -1039,7 +1039,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				VALIDATE_PRODUCT = YES;
+				VALIDATE_PRODUCT = NO;
 			};
 			name = Release;
 		};
@@ -1116,8 +1116,8 @@
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				CODE_SIGN_IDENTITY = "iPhone Developer: lregaladohdez@gmail.com (MYC4H78TQ4)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -1138,7 +1138,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
-				ONLY_ACTIVE_ARCH = YES;
+				ONLY_ACTIVE_ARCH = NO;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG OFFLINE";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -1182,7 +1182,7 @@
 				A0D054CA1DA276E8007B3944 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 		A0D054CB1DA276E8007B3944 /* Build configuration list for PBXNativeTarget "AnimalsMeet" */ = {
 			isa = XCConfigurationList;
@@ -1192,7 +1192,7 @@
 				A0D054CD1DA276E8007B3944 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 /* End XCConfigurationList section */
 
