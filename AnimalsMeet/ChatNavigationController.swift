@@ -56,7 +56,7 @@ class ChatNavigationController: NavigationController, PageTabBarControllerDelega
         newPostButton.image =  #imageLiteral(resourceName: "icons8-create_new")
         newPostButton.tintColor = Color.blue.base
         
-        let search = SearchBar(frame: CGRect(x: 0, y: 0, width:  (Screen.bounds.width - 38*2), height: 30))
+        let search = SearchBar(frame: CGRect(x: 0, y: 0, width:  (Screen.bounds.width - 54*2), height: 30))
         search.delegate = self
         search.contentMode = .center
         search.cornerRadius = 8
@@ -89,7 +89,7 @@ class ChatNavigationController: NavigationController, PageTabBarControllerDelega
     func searchBar(searchBar: SearchBar, didChange textField: UITextField, with text: String?) {
         print("Buscando ahora:" + (text ?? ""))
         conversations?.filter = (text ?? "")!
-        conversations?.refreshControl?.beginRefreshing()
+        conversations?.shouldRefresh()
     }
     
 }

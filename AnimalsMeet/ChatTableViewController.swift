@@ -31,8 +31,10 @@ class ChatTableViewController: EasyTableViewController<ConversationModel, Conver
             }
             
             return conversations.filter({ (conversation) -> Bool in
+                
                 let nickname = conversation.recipient.nickname ?? ""
                 let name = conversation.recipient.name ?? ""
+                print(self.filter + " " + nickname + " " + name)
                 if self.filter == "" || nickname.contains(self.filter) || name.contains(self.filter){
                     return true
                 }
