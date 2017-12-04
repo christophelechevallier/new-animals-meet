@@ -15,7 +15,9 @@ import SwiftDate
 
 class ChatTableViewController: EasyTableViewController<ConversationModel, ConversationCell> {
    
-   @IBAction func newChat(_ sender: Any) {
+    var filter = ""
+   
+    @IBAction func newChat(_ sender: Any) {
       // TODO implement dis
    }
    
@@ -28,7 +30,14 @@ class ChatTableViewController: EasyTableViewController<ConversationModel, Conver
                ConversationModel(json: $0)
             }
             
-            return conversations
+            return conversations.filter({ (conversation) -> Bool in
+                let nickname = conversation.recipient.nickname ?? ""
+                let name = conversation.recipient.name ?? ""
+                if self.filter == "" || nickname.contains(self.filter) || name.contains(self.filter){
+                    return true
+                }
+                return false
+            })
       }
    }
    
