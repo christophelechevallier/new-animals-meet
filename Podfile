@@ -7,6 +7,10 @@ target 'AnimalsMeet' do
 
   # Pods for AnimalsMeet
     pod 'SCLAlertView', :git => 'https://github.com/vikmeup/SCLAlertView-Swift'
+    #pod 'NoChatSLK', '~> 0.2'
+    #pod 'RPChatUI', '~> 0.1'
+    #pod 'LiveChat', '~> 2.0'
+    pod 'ChattoAdditions', '~> 3.2'
     pod 'Fusuma', :git => 'https://github.com/ytakzk/Fusuma.git'
     pod 'SwiftGifOrigin', '~> 1.6.1'
     pod 'ImagePicker', :git => 'https://github.com/hyperoslo/ImagePicker.git'    

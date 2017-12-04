@@ -56,12 +56,13 @@ class ChatNavigationController: NavigationController, PageTabBarControllerDelega
         newPostButton.image =  #imageLiteral(resourceName: "icons8-create_new")
         newPostButton.tintColor = Color.blue.base
         
-        let search = SearchBar(frame: CGRect(x: 0, y: 0, width:  (Screen.bounds.width - 54*2), height: 30))
+        let search = SearchBar(frame: CGRect(x: 0, y: 0, width:  (Screen.bounds.width - 54*2), height: 24))
         search.delegate = self
         search.contentMode = .center
         search.cornerRadius = 8
         search.backgroundColor = Color.grey.lighten2
         search.isClearButtonAutoHandleEnabled = false
+        search.sizeToFit()
         
         let searchBarButton = UIBarButtonItem(customView: search)
     

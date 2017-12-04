@@ -17,6 +17,9 @@ PODS:
     - Bolts/Tasks
   - Bolts/Tasks (1.8.4)
   - Cereal (3.0.1)
+  - Chatto (3.2.0)
+  - ChattoAdditions (3.2.0):
+    - Chatto
   - Crashlytics (3.9.3):
     - Fabric (~> 1.7.2)
   - Fabric (1.7.2)
@@ -99,6 +102,7 @@ DEPENDENCIES:
   - Alamofire (~> 4.0)
   - ARSLineProgress
   - Cereal
+  - ChattoAdditions (~> 3.2)
   - Crashlytics
   - Fabric
   - FBSDKCoreKit
@@ -169,6 +173,8 @@ SPEC CHECKSUMS:
   AsyncDisplayKit: 49d94f5739669d666ff7cdc3430f43f0b2cfbeaf
   Bolts: 8a7995239dbe724f9cba2248b766d48b7ebdd322
   Cereal: e37032cb23f5b62670044bf0e5d393541c1b7aa9
+  Chatto: c5d1d9bfea49618bd55946e903b54d6503f8883f
+  ChattoAdditions: af8f01388821c0ceb6a45654ab6b38dbee6c8836
   Crashlytics: dbb07d01876c171c5ccbdf7826410380189e452c
   Fabric: 9cd6a848efcf1b8b07497e0b6a2e7d336353ba15
   FBSDKCoreKit: 9c2daf0162214d6d2e21cf8208a9c6c2a2e42b9c
@@ -206,6 +212,6 @@ SPEC CHECKSUMS:
   TwicketSegmentedControl: 6d7a4cf243657e0ac3f00d06d873a25334c04042
   UITextView+Placeholder: 77680995fcdd07c3f52ec92fe1150874a2ac89ff
 
-PODFILE CHECKSUM: 14fcaeec73e61221b02b0dc9fce8e194ef670431
+PODFILE CHECKSUM: 6e98bc1793485d898cbebb0ca3d18d8b2f2e1b6f
 
 COCOAPODS: 1.1.1
