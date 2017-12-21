@@ -26,15 +26,17 @@ class ConversationModel {
    }
    
    init(json: JSON) {
+    print("el Json \(json)")
+    print("el json in 0 \(json[0])")
       self.recipient = UserModel(fromJSON: json[0])
-   
+   print("en 1 \(json[1])")
       let firstMsg = json[1]
       messages = [firstMsg["content"].stringValue]
       date = Date(fromString: firstMsg["updated_at"].stringValue, format: .custom("yyyy-MM-dd'T'HH:mm:ss.SSSXXXXX"))
    }
    
    func send(msg: String) -> Promise<JSON> {
-      
+      print("el mensaje a enviar al endoint: \(msg)")
       let parameters = ["messaging[correspondent]" : String(recipient.id!), "messaging[content]": msg]
       return Api.instance.request("/messaging", withParams: parameters, method: .post, encoding: URLEncoding.default)
       

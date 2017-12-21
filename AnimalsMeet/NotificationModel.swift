@@ -15,14 +15,17 @@ class NotificationModel {
    var type: Int!
    var user: UserModel!
    var animal: AnimalModel?
+   var postId: Int?
    
    init(fromJSON json: JSON) {
+	print("init")
       let notification = json["notification"]
 
       user = UserModel(fromJSON: notification["user_sender"])
       let animalJSON = notification["animal_sender"]
-      
-      if animalJSON.exists() && animalJSON.null == nil {
+    
+    
+      if animalJSON.exists() && animalJSON.null == nil && !animalJSON.isEmpty {
          animal = AnimalModel(fromJSON: animalJSON)
       }
       
@@ -34,5 +37,10 @@ class NotificationModel {
       else {
          updatedAt = Date()
       }
+	print("postID has value before\(String(describing:  notification["post_number"].intValue))")
+	//if notification["post_number"].null != nil && notification["post_number"].stringValue != "null" && notification["post_number"].stringValue != "" {
+		print("postID has value\(String(describing:  notification["post_number"].intValue))")
+        postId = notification["post_number"].intValue
+		// }
    }
 }

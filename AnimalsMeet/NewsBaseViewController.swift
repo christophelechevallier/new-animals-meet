@@ -43,6 +43,7 @@ class NewsBaseViewController: UINavigationController, PageTabBarControllerDelega
       feedFriends.endpoint = "/feeds/friends"
       feedPublic = NewsViewController()
       feedPublic.endpoint = "/feeds/public"
+
       
       feedFriends.pageTabBarItem.title = "Amis"
       feedFriends.pageTabBarItem.titleLabel!.font = UIFont.boldSystemFont(ofSize: fontSize)
@@ -56,7 +57,48 @@ class NewsBaseViewController: UINavigationController, PageTabBarControllerDelega
       pushViewController(pagerVC, animated: false)
       view.backgroundColor = .white
       setPostButton()
+    
    }
+   override func viewDidAppear(_ animated: Bool){
+	 print("ya aperecio")
+		self.feedFriends.feedVC.tableView.reloadData()
+	
+        /*if let postId = feedFriends.postId {
+            let i = feedFriends.feedVC.theData.index(where: { data in
+                
+                data.id == postId
+            })
+            print("i value: \(i)")
+            let indexPath = IndexPath.init(row: i!, section: 0)
+            feedFriends.feedVC.tableView.scrollToRow(at: indexPath , at: .top, animated: true)
+        }*/
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        if let postID = appDelegate.postID, let data = feedFriends.feedVC.theData {
+			print("entro en la condicion")
+            self.pagerVC.selectedIndex = 0
+			//self.feedFriends.feedVC.tableView.reloadData()
+			let i = self.feedFriends.feedVC.theData.index(where: { data in
+				//print("el valor de Data.Index: \(data.id)")
+				data.id == postID
+			})
+			print("i value: \(String(describing: i))")
+			let indexPath = IndexPath.init(row: i!, section: 0)
+			self.feedFriends.feedVC.tableView.scrollToRow(at: indexPath , at: .top, animated: true)
+			appDelegate.postID = nil
+			print("el valor de post id \(String(describing: appDelegate.postID))")
+           // let i = data.index(where: { data in
+             //   data.id == postID
+            //})
+            /*print("i value: \(i)")
+            let indexPath = IndexPath.init(row: i!, section: 0)
+            feedFriends.feedVC.tableView.scrollToRow(at: indexPath , at: .top, animated: true)
+            appDelegate.postID = nil
+            print("el valor de post id \(String(describing: appDelegate.postID))")*/
+		}else{
+			print("does not scroll")
+			self.feedFriends.feedVC.didScroll = false
+		}
+    }
    
    func pageTabBarController(pageTabBarController: PageTabBarController, didTransitionTo viewController: UIViewController) {
       if viewController == feedPublic {
@@ -70,5 +112,13 @@ class NewsBaseViewController: UINavigationController, PageTabBarControllerDelega
    
    override func viewWillAppear(_ animated: Bool) {
       super.viewWillAppear(animated)
-   }
+		print("va a aparecer")
+	
+		let appDelegate = UIApplication.shared.delegate as! AppDelegate
+		print("valor de postId(\(String(describing: appDelegate.postID)))")
+		print("el valor de Data: \(feedFriends.feedVC.theData)")
+		if let postID = appDelegate.postID, let data = feedFriends.feedVC.theData {
+			self.pagerVC.selectedIndex = 0
+		}
+	}
 }

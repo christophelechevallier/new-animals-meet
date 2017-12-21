@@ -73,8 +73,8 @@ class Api {
             let c = Alamofire.request(Api.instance.serverUrl + endpoint, method: method, parameters: params, encoding: encoding!, headers: headers)
                 .validate()
                 .responseJSON() { response in
-                    print("la respuesta de: \(Api.instance.serverUrl)\(endpoint):")
-                    print(response)
+                   print("la respuesta de: \(Api.instance.serverUrl)\(endpoint):")
+					print(response)
                     switch response.result {
                     case .success(let json):
                         fulfill(JSON(json))
@@ -88,7 +88,7 @@ class Api {
                         }
                     }
             }
-            print(c.debugDescription)
+           // print(c.debugDescription)
         }
     }
     

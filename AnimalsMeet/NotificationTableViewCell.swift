@@ -15,6 +15,7 @@ class NotificationTableViewCell: UITableViewCell {
     @IBOutlet weak var notifText: UITextView!
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var iconNotif: UIImageView!
+	var postID : Int?
     
     private let style = "<meta charset=\"UTF-8\"><style>* { color: #777777; font-family: verdana; font-size: 12; }</style>"
     
@@ -24,21 +25,23 @@ class NotificationTableViewCell: UITableViewCell {
         
         switch code {
         case 0:
-            actionText = "a aimé votre photo"
+            actionText = "a aimé votre photo" //le gusta su foto
             iconNotif.image = UIImage(named: "heart_icon_round")
             
         case 1:
-            actionText = "vous a envoyé un message"
+            actionText = "vous a envoyé un message" //te envió un mensaje
             iconNotif.image = UIImage(named: "chat")
 
         case 2:
-            actionText = "a aimé votre profil"
+            actionText = "a aimé votre profil" //le gustó su perfil
             iconNotif.image = UIImage(named: "heart_icon_round")
-
+        case 3:
+            actionText = "Il a commencé une Balade" //le gustó su perfil
+            iconNotif.image = UIImage(named: "chat")
         default:
             actionText = "[...]"
         }
-        
+        print("whoForm \(whoFrom)")
         setHtml("\(style)<b>\(whoFrom)</b> \(actionText!)")
     }
     

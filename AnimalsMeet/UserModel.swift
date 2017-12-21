@@ -40,7 +40,10 @@ class UserModel {
       } else if result["user"].null == nil {
          result = result["user"]
       }
-      
+    if result["animals"].null != nil {
+        animals = result["animal"].arrayValue.map{ AnimalModel(fromJSON : $0)}
+    }
+    
       followers = result["followers"].arrayValue.map { UserModel(fromJSON: $0) }
       provider = result["provider"].stringValue
       nickname = result["nickname"].stringValue.replacingOccurrences(of: " ", with: "").lowercased()
@@ -48,7 +51,7 @@ class UserModel {
       id = result["id"].intValue
       uid = result["uid"].stringValue
       let imageURI = result["image"].string
-      if let imageURI = imageURI, imageURI != "" { //modified in case image is ""Url.init explote
+      if let imageURI = imageURI, imageURI != "", imageURI != "<null>" { //modified in case image is ""Url.init explote
         print("la imagen \(imageURI)")
          image = URL(string: imageURI)
          // WORKAROUND: avoid problem with fixed address being returned by the server

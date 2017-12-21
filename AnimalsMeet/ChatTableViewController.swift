@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import NMessenger
 import SwiftyJSON
 import PromiseKit
 import AFDateHelper
@@ -15,28 +14,31 @@ import SwiftDate
 
 class ChatTableViewController: EasyTableViewController<ConversationModel, ConversationCell>,UISearchResultsUpdating,UISearchBarDelegate,UISearchControllerDelegate  {
    
-   @IBAction func newChat(_ sender: Any) {
+    @IBAction func newChat(_ sender: Any) {
       // TODO implement dis
-   }
-   let searchController = UISearchController(searchResultsController: nil)
+    }
+    let searchController = UISearchController(searchResultsController: nil)
     override func fetchItems(from: Int, count: Int) -> Promise<[ConversationModel]> {
       return Api.instance.get("/messaging/getCorrespondents/\(from + 1)")
          .then { json -> [ConversationModel] in
-            let result = JSON(parseJSON: json["correspondents"].stringValue)
+            let result =  json["correspondents"]//JSON(parseJSON: json) //.stringValue
             let conversations = result.arrayValue.map {
                ConversationModel(json: $0)
                 }.filter { m -> Bool in
                     debugPrint(m)
-                    return self.searchController.searchBar.text != nil ? (m.recipient.nickname?.lowercased().contains(self.searchController.searchBar.text!.lowercased()) ?? false) : true
+                    let y =  self.searchController.searchBar.text != nil && self.searchController.searchBar.text != "" ? (m.recipient.nickname?.lowercased().contains(self.searchController.searchBar.text!.lowercased()) ?? false) : true
+                    print("y value \(y)")
+                    return y
             }
+            print(conversations.count)
             return conversations
       }
-   }
+    }
    
-   override func viewDidLoad() {
+    override func viewDidLoad() {
       super.viewDidLoad()
-      searchController.searchBar.sizeToFit()
-      self.navigationItem.titleView = searchController.searchBar
+      //searchController.searchBar.sizeToFit()
+      //self.navigationItem.titleView = searchController.searchBar
       let ViewForDoneButtonOnKeyboard = UIToolbar()
       ViewForDoneButtonOnKeyboard.sizeToFit()
       let btnDoneOnKeyboard = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(self.doneBtnFromKeyboardClicked))
@@ -45,30 +47,47 @@ class ChatTableViewController: EasyTableViewController<ConversationModel, Conver
       pullToRefreshEnabled = true
       tableView.estimatedRowHeight = 120
       tableView.rowHeight = UITableViewAutomaticDimension
-      searchController.searchResultsUpdater = self
+      /*searchController.searchResultsUpdater = self
       definesPresentationContext = true
       searchController.dimsBackgroundDuringPresentation = false
       self.searchController.hidesNavigationBarDuringPresentation = false
-      self.searchController.searchBar.showsCancelButton = true
-      searchController.searchBar.delegate = self
-   }
+      //self.searchController.searchBar.showsCancelButton = true
+        let image = #imageLiteral(resourceName: "post")
+        let v = UIButton(frame: CGRect(x: 0, y: 0, width: 30, height: 30))
+        v.contentMode = .scaleAspectFit
+        v.setImage(image, for: .normal)
+        v.addTarget(self, action: #selector(activeSearchBar), for: .touchUpInside)
+        v.roundify()
+        v.backgroundColor = #colorLiteral(red: 0.4651720524, green: 0.7858714461, blue: 0.9568093419, alpha: 1)
+        let barButton = UIBarButtonItem(customView: v)
+        self.navigationItem.setRightBarButton(barButton, animated: true)
+      searchController.searchBar.delegate = self/**/*/
+    }
    
-   func doneBtnFromKeyboardClicked() {
-   }
+    func doneBtnFromKeyboardClicked() {
+    }
    
-   override func onPopulateCell(item: ConversationModel, cell: ConversationCell) {
+    override func onPopulateCell(item: ConversationModel, cell: ConversationCell) {
+        //print("la lectura \(item.)")
       cell.profilePic.kf.setImage(with: item.recipient.image)
       cell.name.text = item.recipient.nickname
-      cell.lastMsg.text = item.messages?[0]
-      cell.lastMsgTime.text = item.date.localizedString
+		if let message = item.messages{
+			cell.lastMsg.text = message[0].decodeEmoji
+			//cell.lastMsgTime.text = item.date.localizedString
+		}
+		if let date = item.date{
+			cell.lastMsgTime.text = date.localizedString
+		}
       cell.onTap { _ in
-         let vc = ConversationViewController()
-         vc.conversation = item
-         vc.hidesBottomBarWhenPushed = true
-         self.navigationController?.pushViewController(vc, animated: true)
+        let vc = ConversationViewController()
+		 vc.conversation = item
+		//vc.recipientId = item.recipient.id
+		
+        vc.hidesBottomBarWhenPushed = true
+        self.navigationController?.pushViewController(vc, animated: true)
       }
-   }
-   /* func filterContentForSearchText(searchText:String,scope:String = "All"){
+    }
+    /* func filterContentForSearchText(searchText:String,scope:String = "All"){
         news.instance.filter(search: searchText)
     }*/
     func updateSearchResults(for searchController: UISearchController) {
@@ -87,5 +106,7 @@ class ChatTableViewController: EasyTableViewController<ConversationModel, Conver
         searchController.searchBar.resignFirstResponder()
        let _ = self.shouldRefresh()
     }
-
+    func activeSearchBar(){
+        self.searchController.searchBar.becomeFirstResponder()
+    }
 }
