@@ -7,9 +7,9 @@
 //
 
 import Foundation
+import Alamofire
 import SwiftyJSON
 import PromiseKit
-import Alamofire
 
 extension NSNotification.Name {
    
@@ -62,7 +62,7 @@ class MediaModel {
          id = json["id"].intValue
       }
       
-      for like in json["like"].arrayValue {
+	for like in json["like"].arrayValue { //TODO: - check like format in json response -
          likeCount += 1
          if like["user_id"].intValue == App.instance.userModel.id {
             isLiked = true

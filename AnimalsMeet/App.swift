@@ -130,7 +130,10 @@ class App {
             print("retrieved animals")
             let items = json["myanimal"].arrayValue
             self.userModel.animals = items.map { AnimalModel(fromJSON: $0) }
-         }
+			if self.userModel.animals?.count == 0{
+				self.logout()
+			}
+			}
       }
    }
    
@@ -149,6 +152,9 @@ class App {
             self.userData.expiry = Int(result["expiry"].stringValue)
             self.userData.uid = result["uid"].stringValue
             self.userData.client = result["client"].stringValue
+			print("client: \(self.userData.client)")
+			print("UID: \(self.userData.uid)")
+			print("token: \(self.userData.accessToken)")
             return self.requestUserBreedsAndAnimals()
       }
    }
