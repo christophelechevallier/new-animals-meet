@@ -27,15 +27,20 @@ class MediaCell: UITableViewCell {
    @IBOutlet weak var likeLbl: UILabel!
    @IBOutlet weak var postTime: UILabel!
    @IBOutlet weak var legend: UITextView!
+    //@IBOutlet weak var commentlbl: UILabel!
+	//@IBOutlet weak var legendHeight: NSLayoutConstraint!
+	@IBOutlet weak var likelabletop:NSLayoutConstraint!
    
    var media: MediaModel!
    var goToProfile: (() -> ())!
    var goToComments: (() -> ())!
    
    func updateLikeCount() {
-      likeLbl.text = "\(media.likeCount) J'aime"
+      likeLbl.text = "\(media.likeCount) J'aime, \(media.commentCount) Comment"
    }
-   
+    func updateCommentCount() {
+       // commentlbl.text = "\(media.commentCount) Comment"
+    }
    func setMedia(_ media: MediaModel) {
       updateCurrentMedia(media)
       
@@ -61,7 +66,7 @@ class MediaCell: UITableViewCell {
       for v in mediaView.subviews {
          v.removeFromSuperview()
       }
-      
+      likelabletop.constant = UIScreen.main.bounds.width - (likeLbl.frame.width + 32.0)
       self.media = media
       
       let title = NSMutableAttributedString()
@@ -72,11 +77,23 @@ class MediaCell: UITableViewCell {
       }
       nicknames.attributedText = title
       updateLikeCount()
+      //updateCommentCount()
       legend.isHidden = media.description == nil
+	
+	if media.description != nil{
+		if media.description == ""{
+			//legendHeight.constant = 0
+			
+		}
+	}
+	  //legendHeight.constant = 0
       legend.textContainerInset = UIEdgeInsets.zero
       legend.textContainer.lineFragmentPadding = 0;
       legend.text = media.description ?? "hello world"
-      postTime.text = media.updatedAt.localizedString
+	if let date = media.updatedAt{
+		postTime.text = date.localizedString//media.updatedAt.localizedString
+	}
+     // postTime.text = media.updatedAt.localizedString
       
       if media.animal.id != 0 {
          profilePic.kf.setImage(with: media.animal.profilePicUrl)
@@ -91,13 +108,17 @@ class MediaCell: UITableViewCell {
          let textView = UITextView()
          textView.text = media.contentText
          textView.isEditable = false
-		 textView.isScrollEnabled = true//false
+         textView.isScrollEnabled = true//false
          textView.font = UIFont.systemFont(ofSize: 18)
          mediaView.addSubview(textView)
+        //commentlbl.isHidden = false
          textView.snp.makeConstraints { make in
             make.edges.equalToSuperview().inset(UIEdgeInsetsMake(0, 10, 0, 10))
          }
       } else {
+		//commentlbl.isHidden = false
+		//likeLbl.isHidden = false
+		//likelabletop.constant = 5.0
          let image = UIImageView()
          mediaView.addSubview(image)
          image.kf.setImage(with: media.url)
@@ -113,15 +134,17 @@ class MediaCell: UITableViewCell {
             make.height.equalTo(imageHeight)
          }
          image.contentMode = .scaleAspectFill
+        //commentlbl.isHidden = true
+        //image.alpha = 0.3
       }
    }
    
    @IBAction func goToProfile(_ sender: Any) {
-	if let callback = self.goToProfile{
-		callback()
-	}
+    if let callback = self.goToProfile{
+        callback()
+    }
     //if  goToProfile() != nil {
-	//  goToProfile()
+    //  goToProfile()
     //}
      // goToProfile()
    }
